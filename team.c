@@ -1,5 +1,5 @@
 //
-// EECS2031 team.c
+// team.c
 //
 // Program for maintaining a personal team.
 //
@@ -7,7 +7,6 @@
 // Uses a linked list to hold the team players.
 //
 // Author: Rayyan Albaz
-// Student Info: 214540017
 
 
     #include <stdio.h>
@@ -17,13 +16,6 @@
     #include <assert.h>
 
 //**********************************************************************
-// Linked List Definitions 
-//  Define your linked list node and pointer types
-//  here for use throughout the file.
-//
-//
-//   ADD STATEMENT(S) HERE
-
 
     struct player 			//defining the linked list node 
     {
@@ -37,11 +29,7 @@
 
 //**********************************************************************
 // Linked List Function Declarations
-//
-// Functions that modify the linked list. 
-//   Declare your linked list functions here.
-//
-//   ADD STATEMENT(S) HERE
+
     void add(void);								//declaring an insertion function add();
     void print(void);							//declaring printing function print();
     void searchFamily(char familyName[]);		//declaring a search function that takes a string as a parameter 
@@ -87,9 +75,6 @@ int main (void)
         = "Commands are I (insert), D (delete), S (search by name),\n"
           "  V (search by value), P (print), Q (quit).\n";
 
-    // Declare linked list head.
-    //   ADD STATEMENT(S) HERE TO DECLARE LINKED LIST HEAD.
-        
  
     // announce start of program
     printf("%s",bannerString);
@@ -112,21 +97,15 @@ int main (void)
             
             // Insert a player entry into the linked list.
             // Maintain the list in correct order (G, D, M, S).
-            //   ADD STATEMENT(S) HERE
 
             add();   //calling the insertion function add();
 
-            // USE THE FOLLOWING PRINTF STATEMENTS WHEN PROMPTING FOR DATA:
-           	// printf("  family name: ");
-            //printf("  first name: ");
-            //printf("  position: ");
-            //printf("  value: ");
-
+ 
         }
         else if (response == 'D')
         {
             // Delete a player from the list.
-             //   ADD STATEMENT(S) HERE
+    
             printf("\nEnter family name for entry to delete: ");
             safegets(input, MAX_LENGTH+1);		//reading the user input
             deleteFamily(input);				//calling a delete function with user input as a parameter
@@ -136,7 +115,7 @@ int main (void)
         else if (response == 'S')
         {
             // Search for a player by family name.
-            //   ADD STATEMENT(S) HERE
+            
             printf("\nEnter family name to search for: ");
             safegets(input, MAX_LENGTH+1);			//reading the user input
             searchFamily(input);					//calling a delete function with user input as a parameter
@@ -145,7 +124,7 @@ int main (void)
         else if (response == 'V')
         {
             // Search for players that are worth less than or equal a value.
-            //   ADD STATEMENT(S) HERE
+            
 
             printf("\nEnter value: ");
             safegets(input , MAX_LENGTH+1);		//getting user input 
@@ -157,7 +136,7 @@ int main (void)
         else if (response == 'P')
         {
             // Print the team.
-            //   ADD STATEMENT(S) HERE
+         
             print();							//calling the print function
 
 
@@ -174,7 +153,7 @@ int main (void)
     } while (response != 'Q');
   
     // Delete the whole linked list that hold the team.
-    //   ADD STATEMENT(S) HERE
+   
         while (team != NULL) 			//declaring a loop that goes through all nodes untill team is NULL
     {
         p = team->next;					//pointing to the next node
@@ -184,7 +163,7 @@ int main (void)
 
           
     // Print the linked list to confirm deletion.
-    //  ADD STATEMENT(S) HERE
+   
         print();						//calling print function print();
 
     return 0;
@@ -376,7 +355,7 @@ void print(void)					//defining the print function
 }
 
 
-void searchFamily(char familyName[])			//defining search byb family name function 
+void searchFamily(char familyName[])			//defining search by family name function 
 {
     
     struct player *q;
